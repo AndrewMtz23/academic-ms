@@ -29,4 +29,9 @@ public class ConfigurationController {
         return config.map(ResponseEntity::ok)
                         .orElseGet(() -> ResponseEntity.notFound().build());
     }
+
+    @GetMapping("/university/{idUniversity}")
+    public List<Configuration> getByUniversity(@PathVariable Integer idUniversity) {
+        return configurationService.getByUniversity(idUniversity);
+    }
 }
