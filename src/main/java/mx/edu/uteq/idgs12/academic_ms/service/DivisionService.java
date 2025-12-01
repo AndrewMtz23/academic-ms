@@ -55,4 +55,11 @@ public class DivisionService {
         return dto;
     }
 
+    public List<DivisionDTO> getActiveByUniversity(Integer idUniversity) {
+        return divisionRepository.findByUniversity_IdUniversityAndStatusTrue(idUniversity)
+                .stream()
+                .map(this::toDTO)
+                .collect(Collectors.toList());
+    }
+
 }
