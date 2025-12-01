@@ -43,4 +43,9 @@ public class DivisionController {
     public List<DivisionDTO> getByUniversity(@PathVariable Integer idUniversity) {
         return divisionService.getByUniversity(idUniversity);
     }
+
+    @GetMapping("/university/{idUniversity}/active")
+    public List<DivisionDTO> getActiveByUniversity(@PathVariable Integer idUniversity) {
+        return divisionService.getActiveByUniversity(idUniversity);
+    }
 }
