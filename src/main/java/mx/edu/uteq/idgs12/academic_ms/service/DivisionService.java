@@ -28,6 +28,13 @@ public class DivisionService {
                 .collect(Collectors.toList());
     }
 
+        public List<DivisionDTO> getAllActive() {
+        return divisionRepository.findByStatusTrue()
+                .stream()
+                .map(this::toDTO)
+                .collect(Collectors.toList());
+    }
+
 
     private DivisionDTO toDTO(Division division) {
         DivisionDTO dto = new DivisionDTO();
