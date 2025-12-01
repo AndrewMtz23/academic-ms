@@ -24,4 +24,8 @@ public class DivisionController {
         return divisionService.getAll();
     }
 
+    @GetMapping("/active")
+    public List<DivisionDTO> getAllActive() {
+        return divisionService.getAllActive();
+    }
 }
